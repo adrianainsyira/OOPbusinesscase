@@ -1,0 +1,54 @@
+public class Main {
+    // Application code
+    public static void main(String args[]) {
+        //School sk1 = new School();
+
+        // Direct access to attributes is not a good practice
+        /*sk1.setName("SK Satu");
+
+        Address addr = new Address();
+        addr.setStreet("Jalan 2");
+        addr.setDistrict("JB");
+        addr.setPostcode("30021");
+        addr.setState("Johor");
+        sk1.setAddress(addr);*/
+        
+        Address addr = new Address(); // calling a constructor
+        Address addr2 = new Address("Sri Iskandar", "Tronoh", "31750", "Perak");
+
+
+        Marks marks = new Marks(100);
+        //marks.createData(100);
+        
+        try {
+
+            marks.setMark(50, 0);
+        }
+        
+        catch (Exception ex){
+            System.out.println("Marks must be positive");
+            ex.printStackTrace();
+        }
+        
+        float mark = marks.getMark(0);
+        System.out.println("Marks for student 0 is " + mark);
+        
+        SchoolList moeList = new SchoolList();
+        moeList.addSchool(new School());
+    
+        DSchoolList dsl= new DSchoolList();
+        
+        School sc = new School();
+        sc.setName("SK Athirah");
+        dsl.addSchool(sc);
+      
+        
+        School sc2 = new School();
+        sc2.setName("SK Raudhah");
+        dsl.addSchool(sc2);
+       
+        
+        dsl.display();
+        
+    }
+}
